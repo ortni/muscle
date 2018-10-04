@@ -1,0 +1,34 @@
+# Roadmap
+
+- routes
+  - /
+  - /summary
+  - /techs
+  - /techs/id
+  - /experiences
+  - /experiences/id
+  - /projects
+  - /projects/id
+  - /educations
+  - /organizations
+  - /organizations/id
+  - /hobbies
+    - /food
+    - /photos
+    - /traveling
+    - /musics
+    - /movies
+    - /games
+  - /contact-me
+  - /give-me-a-price
+- logics
+  - data loading/encryption
+  - statistics
+  - parallex scrolling
+  - styling
+  - ga
+  - i18n
+- mocking data (load from remote)
+- testing
+- ci/cd
+
