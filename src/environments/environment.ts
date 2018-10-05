@@ -4,7 +4,10 @@
 
 export const environment = {
   production: false,
-  title: 'Muscle (DEV)'
+  title: '',
+  data: {
+    title: 'Muscle (DEV)'
+  }
 };
 
 /*

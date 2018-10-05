@@ -1,8 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 
-import { AppRoutingModule } from './app-routing.module';
+import { DataResolver } from './data.resolver';
 import { AppComponent } from './app.component';
+
+const routes: Routes = [{
+  path: '',
+  resolve: { data: DataResolver },
+  children: [{
+    path: 'a',
+    component: AppComponent
+  }]
+}];
 
 @NgModule({
   declarations: [
@@ -10,7 +20,7 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]

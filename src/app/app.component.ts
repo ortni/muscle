@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 
-import { Title } from '@angular/platform-browser';
-import { environment as env } from '../environments/environment';
+import { AppData } from './app.data';
 
 @Component({
   selector: 'ooo-root',
@@ -9,7 +8,9 @@ import { environment as env } from '../environments/environment';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  constructor(private title: Title) {
-    title.setTitle(env.title || 'Untitled');
+  get data() {
+    return this.app.data;
+  }
+  constructor(private app: AppData) {
   }
 }
