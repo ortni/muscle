@@ -1,0 +1,7 @@
+body
+  @for $i from 0 through 20
+    $t: 5
+    $r: $i * $t
+    $v: 100 - $i * $t
+    --c-black-#{$r}: #{lighten(black, $v)}
+  --border-debug: 1px solid var(--c-black-50)

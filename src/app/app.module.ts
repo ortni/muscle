@@ -8,10 +8,7 @@ import { AppComponent } from './app.component';
 const routes: Routes = [{
   path: '',
   resolve: { data: DataResolver },
-  children: [{
-    path: 'a',
-    component: AppComponent
-  }]
+  loadChildren: '../pages/pages.module#PagesModule'
 }];
 
 @NgModule({

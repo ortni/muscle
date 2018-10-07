@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { AppData } from './app.data';
 
 @Component({
-  selector: 'ooo-root',
+  selector: 'ooo-app',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.sass']
 })

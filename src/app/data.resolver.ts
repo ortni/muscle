@@ -5,7 +5,7 @@ import { AppData } from './app.data';
 import { Title } from '@angular/platform-browser';
 
 @Injectable({ providedIn: 'root' })
-export class DataResolver implements Resolve<any>{
+export class DataResolver implements Resolve<any> {
 
   constructor(private title: Title,
     private data: AppData) {
