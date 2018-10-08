@@ -7,6 +7,7 @@ import { environment as env } from '../environments/environment';
 export class AppData {
   title = '';
   data;
+  noData = true;
   private edata = env.data;
 
   constructor() {
@@ -20,7 +21,11 @@ export class AppData {
   }
 
   private decryption(data, key) {
-    const ch = AES.decrypt(data, key).toString(enc.Utf8);
-    return JSON.parse(ch || '{}');
+    let r = '';
+    if (key) {
+      r = AES.decrypt(data, key).toString(enc.Utf8);
+    }
+    this.noData = !r;
+    return JSON.parse(r || '{}');
   }
 }
