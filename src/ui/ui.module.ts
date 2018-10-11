@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 
-import { ViewComponent } from './view/view.component';
+import { ViewTag } from './view/view.tag';
 
 const exp = [
-  ViewComponent
+  ViewTag
 ];
 
 @NgModule({

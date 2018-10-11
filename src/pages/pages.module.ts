@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { UiModule } from '@ortni/ui';
-import { LandingPage } from './landing-page/landing.page';
+import { LocusModule } from '@ortni/locus';
+import { LandingPageModule, LandingPage, LandingResolver } from './landing-page';
 
 const routes: Routes = [{
   path: '',
+  resolve: {
+    store: LandingResolver
+  },
   component: LandingPage
   // }, {
   //   path: 'summary',
@@ -23,13 +26,15 @@ const routes: Routes = [{
 
 @NgModule({
   declarations: [
-    LandingPage
     // SummaryPage,
   ],
   imports: [
-    UiModule,
+    LandingPageModule,
+    LocusModule,
     RouterModule.forChild(routes)
   ],
-  exports: [RouterModule]
+  exports: [
+    RouterModule
+  ]
 })
 export class PagesModule { }

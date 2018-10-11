@@ -8,9 +8,6 @@ import { AppData } from './app.data';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  get data() {
-    return this.app.data;
-  }
-  constructor(private app: AppData) {
+  constructor(private data: AppData) {
   }
 }

@@ -1,13 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { Routes, RouterModule } from '@angular/router';
 
-import { DataResolver } from './data.resolver';
 import { AppComponent } from './app.component';
 
 const routes: Routes = [{
   path: '',
-  resolve: { data: DataResolver },
   loadChildren: '../pages/pages.module#PagesModule'
 }];
 
@@ -16,6 +15,7 @@ const routes: Routes = [{
     AppComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     RouterModule.forRoot(routes)
   ],
