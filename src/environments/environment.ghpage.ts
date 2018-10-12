@@ -1,5 +1,5 @@
 export const environment = {
-  baseHref: '/',
   production: true,
+  baseHref: '/muscle/',
   title: 'Entitled'
 };

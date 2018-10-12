@@ -1,11 +1,13 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AES, enc } from 'crypto-js';
 import { map } from 'rxjs/operators';
+import { APP_BASE_HREF } from '@angular/common';
 
 @Injectable({ providedIn: 'root' })
 export class LocusLoader {
-  constructor(private http: HttpClient) {}
+  constructor(@Inject(APP_BASE_HREF) private base: string,
+    private http: HttpClient) {}
   text(id = 'en') {
     return this.get('text', id + '.json');
   }
@@ -16,7 +18,7 @@ export class LocusLoader {
   }
 
   private get(res, id, params = {}) {
-    return this.http.get(`/assets/locale/${res}/${id}`, params);
+    return this.http.get(`${this.base}assets/locale/${res}/${id}`, params);
   }
 
   private decrypt(data, key) {
