@@ -1,0 +1,12 @@
+{
+  "title": {
+    "hero": "HHHEEERRO",
+    "summary": "Summary"
+  },
+  "hero": {
+    "aka": "a.k.a.",
+    "currentlyIm": "Currently I am",
+    "callme": "Most people call me ",
+    "seekingFor": "Now I am seeking positions for: "
+  }
+}
