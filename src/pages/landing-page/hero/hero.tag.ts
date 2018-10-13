@@ -1,4 +1,5 @@
 import { Input, Component } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'ooo-hero',
@@ -12,6 +13,10 @@ export class HeroTag {
     this.name = v.name || {};
     this.contacts = v.contacts || [];
     this.seeking = (v.seeking || []).join(', ');
+    ['bg', 'me'].forEach(k => {
+      const { img = [] } = v;
+      this.img[k] = `url(${img[k]})`;
+    });
   }
   get data() {
     return this._data;
@@ -22,10 +27,15 @@ export class HeroTag {
   get text() {
     return this._text;
   }
+  img = {
+    me: '',
+    bg: ''
+  };
   name: any = {};
   contacts = [];
   seeking = '';
   private _text;
   private _data;
-
+  constructor(private dom: DomSanitizer) {
+  }
 }

@@ -1,5 +1,6 @@
-$primary: #368;
-$secondary: #453455;
+$px-base: 6px
+$primary: #368
+$secondary: #453455
 body
   @for $i from 0 through 20
     $t: 5
@@ -9,3 +10,9 @@ body
     --c-primary-#{$r}: #{lighten($primary, $r)}
     --c-secondary-#{$r}: #{lighten($secondary, $r)}
   --border-debug: 1px solid var(--c-black-50)
+  --px-primary: #{$px-base * 9}
+  --px-sub-pri: #{$px-base * 7}
+  --px-secondary: #{$px-base * 4}
+  --px-sub-sec: #{$px-base * 3.5}
+  --px-normal: #{$px-base * 2}
+  --px-sub-nor: #{$px-base * 1.6}

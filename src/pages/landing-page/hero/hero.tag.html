@@ -1,17 +1,18 @@
-<div class='me'></div>
+<div class='bg' [style.background-image]='img.bg'></div>
+<div class='me' [style.background-image]='img.me'></div>
 
 <div class='highlight'>
+  <div class='status'> {{ text.currentlyIm }} {{ data.status }} </div>
   <div class='name' *ngIf='name.primary'>
     <span class='main'> {{ name.primary }} </span>
     <span class='secondary'> {{ text.aka }} {{ name.secondary }} </span>
     <div class='callme'> {{ text.callme }} ... {{ name.callme }} </div>
   </div>
-  <div class='status'> {{ text.currentlyIm }} {{ data.status }} </div>
   <div class='seeking'> {{ text.seekingFor }} {{ seeking }} </div>
 </div>
 
 <div class='contacts'>
-  <a [href]='c.url' [title]='c.title' class='icon' *ngFor='let c of contacts'>
+  <a [href]='c.url' [title]='c.text' class='icon' *ngFor='let c of contacts'>
     <!-- <ooo-icon [name]='c.icon'></ooo-icon> -->
   </a>
 </div>

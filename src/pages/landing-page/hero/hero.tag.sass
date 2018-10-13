@@ -1,29 +1,49 @@
-\:host
-  position: absolute
+%cloudy_text
+  color: var(--c-black-0)
+  text-shadow: 2px 2px 3px var(--c-black-80)
+
+%covered_bg
+  background-size: cover
+  background-repeat: no-repeat
+
+%full_size
   width: 100%
   height: 100%
+
+\:host
+  @extend %full_size
+  display: block
+  .bg
+    @extend %covered_bg
+    @extend %full_size
+    filter: blur(5px)
   .me
+    @extend %covered_bg
     position: absolute
-    bottom: 50px
+    bottom: 0
     left: 100px
-    width: 200px
-    height: 360px
+    width: 465px
+    height: 630px
   .highlight
     position: absolute
-    right: 20%
-    top: 30%
+    left: 580px;
+    bottom: 300px;
     .main
-      font-size: 36px
+      @extend %cloudy_text
+      font-size: var(--px-primary)
       font-weight: bold
-      color: var(--c-primary-10)
-    .secondary
-      font-size: 28px
-      color: var(--c-primary-20)
+    .secondary, .status
+      @extend %cloudy_text
+      font-size: var(--px-secondary)
     .callme
-      padding-left: 30px
-      font-size: 20px
+      @extend %cloudy_text
+      margin: var(--px-normal) 0
+      padding: 0 0 0 var(--px-sub-pri)
+      font-size: var(--px-sub-sec)
       font-style: italic
-      color: var(--c-secondary-20)
     .status, .seeking
-      margin: 15px 0
-      color: var(--c-black-70)
+      margin: var(--px-normal) 0
+    .seeking
+      @extend %cloudy_text
+      padding: 0 0 0 calc(var(--px-sub-pri) * 1.5)
+      font-size: var(--px-sub-sec)
