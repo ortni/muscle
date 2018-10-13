@@ -5,8 +5,8 @@
   },
   "hero": {
     "aka": "a.k.a.",
-    "currentlyIm": "Currently I am",
-    "callme": "Most people call me ",
-    "seekingFor": "Now I am seeking positions for: "
+    "currentlyIm": "",
+    "callme": "People call me ",
+    "seekingFor": "Seeking positions for: "
   }
 }
