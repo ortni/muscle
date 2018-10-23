@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
-import { map, mergeMap } from 'rxjs/operators';
+import { of, forkJoin } from 'rxjs';
+import { tap, map } from 'rxjs/operators';
 import { LocusText } from './locus.text';
 import { LocusData } from './locus.data';
 
@@ -29,22 +29,22 @@ export class LocusCore {
     }
     this.key = key;
     this.option = option || this.option;
-    const { id } = this.option;
-    const dataLoader = mergeMap(text => this.data.load(id, key)
-      .pipe(map(data => {
-        if (Object.keys(data).length > 0) {
-          this.save('text', text);
-          this.save('data', data);
-        } else {
-          this.save('text', {});
-          this.save('data', {});
-        }
-        return this.store;
-    })));
-    return this.text.load(id).pipe(dataLoader);
+    const { id, dataset } = this.option;
+    return forkJoin(this.reqs(id, dataset, key)).pipe(map(list => {
+      return this.store;
+    }));
   }
 
-  private save(key, data) {
-    this.store[key] = data;
+  private reqs(id, dataset, key) {
+    return [
+      this.text.load(id).pipe(this.save('text')),
+      ...dataset.map(d => this.data.load(`${id}/${d}`, key).pipe(this.save(d)))
+    ];
+  }
+
+  private save(key) {
+    return tap((data) => {
+      this.store[key] = data;
+    });
   }
 }

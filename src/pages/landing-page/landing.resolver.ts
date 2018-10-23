@@ -6,11 +6,11 @@ import { LocusCore } from '@ortni/locus';
 @Injectable({ providedIn: 'root' })
 export class LandingResolver implements Resolve<any> {
 
-  constructor(private store: LocusCore) {
+  constructor(private data: LocusCore) {
   }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     const { ln = 'en', call = '' } = route.queryParams;
-    return this.store.use({ id: ln }, call);
+    return this.data.use({ id: ln, dataset: ['db', 'landing'] }, call);
   }
 }

@@ -9,10 +9,11 @@
     <div class='callme'> {{ text.callme }} ... {{ name.callme }} </div>
   </div>
   <div class='seeking'> {{ text.seekingFor }} {{ seeking }} </div>
+  <div class='seeking' *ngIf='objective'> {{ objective }} </div>
 </div>
 
 <div class='contacts'>
   <a [href]='c.url' [title]='c.text' class='icon' *ngFor='let c of contacts'>
-    <!-- <ooo-icon [name]='c.icon'></ooo-icon> -->
+    <ooo-icon [name]='c.icon'></ooo-icon>
   </a>
 </div>

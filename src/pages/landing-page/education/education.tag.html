@@ -1,0 +1,16 @@
+<h2> {{ data.title }} </h2>
+<div *ngFor='let k of data.list'>
+  <div class='item'>
+    <ng-container *ngTemplateOutlet="eduItem;context:{ctx:db.educations[k]}">
+    </ng-container>
+  </div>
+</div>
+
+
+<ng-template #eduItem let-ctx='ctx'>
+  {{ ctx.organisationKey }}, College of {{ ctx.college }}, {{ ctx.period | json }}
+  <div> Dept. of {{ ctx.major }} </div>
+  <div> Major - {{ ctx.domain }} </div>
+  Projects: {{ ctx.projects.length }}
+  <!-- {{ ctx | json }} -->
+</ng-template>

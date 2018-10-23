@@ -10,6 +10,7 @@ export class HeroTag {
   @Input() set data(v) {
     v = v || {};
     this._data = v || {};
+    this.objective = v.objective;
     this.name = v.name || {};
     this.contacts = v.contacts || [];
     this.seeking = (v.seeking || []).join(', ');
@@ -34,6 +35,7 @@ export class HeroTag {
   name: any = {};
   contacts = [];
   seeking = '';
+  objective = '';
   private _text;
   private _data;
   constructor(private dom: DomSanitizer) {

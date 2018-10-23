@@ -1,0 +1,24 @@
+$fm: 'muscle'
+@font-face
+  font-weight: normal
+  font-style: normal
+  font-family: $fm
+  src: url('/assets/fonts/' + $fm + '.ttf?asdfji') format('truetype'), url('/assets/fonts/' + $fm + '.woff?asdfji') format('woff'), url('/assets/fonts/' + $fm + '.svg?asdfji#' + $fm) format('svg')
+
+\:host
+  margin: 0
+  padding: 0
+  font-size: 0
+  &.visible
+    font-size: inherit
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: $fm !important
+    speak: none
+    font-style: normal
+    font-weight: normal
+    font-variant: normal
+    text-transform: none
+    line-height: 1
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
