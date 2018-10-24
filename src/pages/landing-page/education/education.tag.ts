@@ -7,5 +7,11 @@ import { Input, Component } from '@angular/core';
 })
 export class EducationTag {
   @Input() db = {};
-  @Input() data = {};
+  @Input() set data(v) {
+    this._data = v || {};
+  }
+  get data() {
+    return this._data;
+  }
+  private _data;
 }

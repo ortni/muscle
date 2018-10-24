@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UiModule } from '@ortni/ui';
 
+import { CakeModule } from '@ortni/cake';
+
 import { HeroTag } from './hero/hero.tag';
 import { ExpertiseTag } from './expertise/expertise.tag';
 import { EducationTag } from './education/education.tag';
@@ -14,13 +16,14 @@ const tags = [
 ];
 
 @NgModule({
+  imports: [
+    UiModule,
+    CakeModule,
+    CommonModule,
+  ],
   declarations: [
     ...tags,
     LandingPage,
-  ],
-  imports: [
-    UiModule,
-    CommonModule,
   ],
   exports: [
     LandingPage,

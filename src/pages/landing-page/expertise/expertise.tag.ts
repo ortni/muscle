@@ -8,7 +8,6 @@ import { Input, Component } from '@angular/core';
 export class ExpertiseTag {
   @Input() text: any;
   @Input() set data(v) {
-    console.log('data', v)
     this._data = v;
   }
   private _data;

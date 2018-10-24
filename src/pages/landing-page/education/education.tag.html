@@ -1,6 +1,6 @@
 <h2> {{ data.title }} </h2>
-<div *ngFor='let k of data.list'>
-  <div class='item'>
+<div class='items'>
+  <div class='item' *ngFor='let k of data.list'>
     <ng-container *ngTemplateOutlet="eduItem;context:{ctx:db.educations[k]}">
     </ng-container>
   </div>
@@ -8,8 +8,10 @@
 
 
 <ng-template #eduItem let-ctx='ctx'>
-  {{ ctx.organisationKey }}, College of {{ ctx.college }}, {{ ctx.period | json }}
+  <ck-org [data]='db.organisations[ctx.organisationKey]'></ck-org>
+  <span class='college'> College of {{ ctx.college }} </span>
   <div> Dept. of {{ ctx.major }} </div>
+  <ck-period [data]='ctx.period'></ck-period>
   <div> Major - {{ ctx.domain }} </div>
   Projects: {{ ctx.projects.length }}
   <!-- {{ ctx | json }} -->

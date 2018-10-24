@@ -10,8 +10,7 @@ export class LandingPage implements OnInit {
   db: any;
   data: any;
   text: any;
-  constructor(private route: ActivatedRoute) {
-  }
+  constructor(private route: ActivatedRoute) {}
   ngOnInit() {
     const { db, landing, text } = this.route.snapshot.data.store;
     this.text = text;
