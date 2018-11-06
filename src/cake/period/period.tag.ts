@@ -1,6 +1,6 @@
 import { Input, Component } from '@angular/core';
 
-import { DateFormater as Dfmt } from './date.formater';
+import { DateFmt } from './date.fmt';
 
 const fmts = ['short', 'beginAtAgo', 'endAtAgo', 'duration', 'shortSeason'];
 
@@ -17,24 +17,19 @@ export class PeriodTag {
   }
   @Input() set fmt(v) {
     this._fmt = v;
-    const fn = `fmt_${v}`;
-    this[fn]();
+    this.view = this.dfmt.format(v, this.since, this.until);
   }
 
   view = '';
   since = new Date();
   until = new Date();
   private _fmt = 'short';
-
-  private fmt_short() {
-    const v = `${Dfmt.short(this.since)} - ${Dfmt.short(this.until)}`;
-    this.view = v;
-  }
+  constructor(private dfmt: DateFmt) {}
 
   private toDate(str) {
     const y = str.substr(0, 4);
     const m = str.substr(4, 2);
     const d = str.substr(6, 2);
-    return new Date(`${y}-${m}-${d}`);
+    return new Date(y, m, d);
   }
 }

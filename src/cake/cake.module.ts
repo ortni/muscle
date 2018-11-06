@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { LocusModule } from '@ortni/locus';
 
 import { UiModule } from '@ortni/ui';
 import { OrgTag } from './org/org.tag';
@@ -13,6 +14,7 @@ const exports = [
 @NgModule({
   imports: [
     CommonModule,
+    LocusModule,
     UiModule
   ],
   declarations: [

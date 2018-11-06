@@ -1,4 +1,22 @@
 {
+  "date": {
+    "duration": {
+      "year": "Year",
+      "month": "Month"
+    },
+    "season": {
+      "short": ["Spring", "Summer", "Fall", "Winter"]
+    },
+    "month": {
+      "short": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    },
+    "format": {
+      "short": "#{mmm}, #{yyyy}",
+      "beginAtAgo": "Since #{time} ago",
+      "endAtAgo": "End at #{time} ago",
+      "duration": "#{duration}",
+    }
+  },
   "title": {
     "hero": "HHHEEERRO",
     "summary": "Summary"
