@@ -1,6 +1,32 @@
 {
+  "date": {
+    "duration": {
+      "year": "年",
+      "month": "月"
+    },
+    "season": {
+      "short": ["春", "夏", "秋", "冬"]
+    },
+    "month": {
+      "short": ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"]
+    },
+    "format": {
+      "short": "#{yyyy}年 #{mmm}",
+      "beginAtAgo": "始於#{time}前",
+      "endAtAgo": "結束於#{time}前",
+      "duration": "#{duration}"
+    }
+  },
   "title": {
-    "hero": "嗨",
-    "summary": "生涯總結"
+    "hero": "HHHEEERRO",
+    "summary": "Summary"
+  },
+  "hero": {
+    "aka": "a.k.a.",
+    "currentlyIm": "",
+    "callme": "People call me ",
+    "seekingFor": "Seeking positions for: "
+  },
+  "expertise": {
   }
 }

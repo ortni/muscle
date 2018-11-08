@@ -1,5 +1,12 @@
+%item
+  display: grid
+  grid-template-columns: 40px auto
+  grid-column-gap: 10px
+  ooo-icon
+    text-align: center
+
 \:host
-  color: red
+  color: var(--c-black-70)
   padding: 72px
   height: 100%
   display: grid
@@ -11,6 +18,16 @@
     margin: 0
     font-size: 42px
     font-weight: var(--fw-bolder)
+  .detail > *
+    padding: 10px 0 0
+  .detail > .tag
+    @extend %item
+  .detail > .combo
+    display: grid
+    grid-template-columns: repeat(3, 33.33%)
+    grid-column-gap: 10px
+    > *
+      @extend %item
   .items
     height: 100%
     width: 100%
@@ -18,13 +35,16 @@
     flex-flow: column
     justify-content: space-evenly
   .item
-    display: block
+    display: grid
+    grid-template-columns: 120px auto
+    grid-column-gap: 20px
     margin: 0 30px 20px
+    align-items: center
+    img
+      width: 100%
     ck-org
       font-weight: var(--fw-bold)
       font-size: 28px
-    ck-period
-      padding: 10px 0
     .college
       font-size: 22px
 

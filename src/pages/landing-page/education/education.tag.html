@@ -1,18 +1,35 @@
 <h2> {{ data.title }} </h2>
 <div class='items'>
   <div class='item' *ngFor='let k of data.list'>
-    <ng-container *ngTemplateOutlet="eduItem;context:{ctx:db.educations[k]}">
+    <ng-container *ngTemplateOutlet="eduItem;context:{ctx:edu[k]}">
     </ng-container>
   </div>
 </div>
 
 
 <ng-template #eduItem let-ctx='ctx'>
-  <ck-org [data]='db.organisations[ctx.organisationKey]'></ck-org>
-  <span class='college'> College of {{ ctx.college }} </span>
-  <div> Dept. of {{ ctx.major }} </div>
-  <ck-period [data]='ctx.period'></ck-period>
-  <div> Major - {{ ctx.domain }} </div>
-  Projects: {{ ctx.projects.length }}
+  <div class='logo'>
+    <img [src]='org[ctx.organisationKey].logo'/>
+  </div>
+  <div class='detail'>
+    <ck-org [data]='org[ctx.organisationKey]'></ck-org>
+    <span class='college'> {{ ctx.college }} </span>
+    <div class='tag'>
+      <ooo-icon name='grid'></ooo-icon>
+      {{ ctx.dept }} </div>
+    <div class='tag'>
+      <ooo-icon name='cap'></ooo-icon>
+      Major - {{ ctx.major }} </div>
+    <div class='combo'>
+      <ck-period [data]='ctx.period'></ck-period>
+      <div>
+        <ooo-icon name='location'></ooo-icon>
+        {{ loc[org[ctx.organisationKey].locationKey].text }}
+        </div>
+      <div>
+        <ooo-icon name='case'></ooo-icon>
+        Projects: {{ ctx.projects.length }} </div>
+    </div>
+  </div>
   <!-- {{ ctx | json }} -->
 </ng-template>

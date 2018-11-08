@@ -1,8 +1,6 @@
-import { Input, Component } from '@angular/core';
+import { HostListener, Input, Component } from '@angular/core';
 
 import { DateFmt } from './date.fmt';
-
-const fmts = ['short', 'beginAtAgo', 'endAtAgo', 'duration', 'shortSeason'];
 
 @Component({
   selector: 'ck-period',
@@ -13,18 +11,22 @@ export class PeriodTag {
   @Input() set data({ since, until }) {
     this.since = this.toDate(since);
     this.until = this.toDate(until);
-    this.fmt = this._fmt;
-  }
-  @Input() set fmt(v) {
-    this._fmt = v;
-    this.view = this.dfmt.format(v, this.since, this.until);
+    this.view = this.dfmt.format(null, this.since, this.until);
   }
 
   view = '';
   since = new Date();
   until = new Date();
-  private _fmt = 'short';
-  constructor(private dfmt: DateFmt) {}
+  constructor(private dfmt: DateFmt) {
+    dfmt.fmtChanged.subscribe(fmt => {
+      this.view = dfmt.format(fmt, this.since, this.until);
+    });
+  }
+
+  @HostListener('click', ['$event'])
+  onclick() {
+    this.dfmt.nextFmt();
+  }
 
   private toDate(str) {
     const y = str.substr(0, 4);

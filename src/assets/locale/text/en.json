@@ -1,20 +1,23 @@
 {
   "date": {
     "duration": {
-      "year": "Year",
-      "month": "Month"
+      "year": "year",
+      "month": "month"
     },
     "season": {
-      "short": ["Spring", "Summer", "Fall", "Winter"]
+      "short": ["Q1", "Q2", "Q3", "Q4"],
+      "shortFull": ["Spring", "Summer", "Fall", "Winter"]
     },
     "month": {
-      "short": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+      "short": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
     },
     "format": {
       "short": "#{mmm}, #{yyyy}",
+      "shortSeason": "#{ss}, #{yyyy}",
+      "shortSeasonFull": "#{sf}, #{yyyy}",
       "beginAtAgo": "Since #{time} ago",
       "endAtAgo": "End at #{time} ago",
-      "duration": "#{duration}",
+      "duration": "Duration: #{y}y, #{m}m"
     }
   },
   "title": {

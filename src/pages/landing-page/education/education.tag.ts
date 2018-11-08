@@ -6,12 +6,19 @@ import { Input, Component } from '@angular/core';
   styleUrls: ['./education.tag.sass']
 })
 export class EducationTag {
-  @Input() db = {};
+  @Input() set db(v) {
+    this.org = v.organisations;
+    this.edu = v.educations;
+    this.loc = v.locations;
+  }
   @Input() set data(v) {
     this._data = v || {};
   }
   get data() {
     return this._data;
   }
+  org = {};
+  edu = {};
+  loc = {};
   private _data;
 }

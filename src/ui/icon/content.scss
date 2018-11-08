@@ -1,4 +1,4 @@
-:host {
+:host{
 &.mu-mysql:before {
   content: "\e900";
 }
@@ -110,139 +110,151 @@
 &.mu-vim:before {
   content: "\e924";
 }
-&.mu-star:before {
+&.mu-bitcoin:before {
   content: "\e925";
 }
-&.mu-half-star:before {
+&.mu-language:before {
   content: "\e926";
 }
-&.mu-heart:before {
+&.mu-send:before {
   content: "\e927";
 }
-&.mu-group:before {
+&.mu-phone:before {
   content: "\e928";
 }
-&.mu-grid:before {
+&.mu-instagram:before {
   content: "\e929";
 }
-&.mu-list-detail:before {
+&.mu-tag:before {
   content: "\e92a";
 }
-&.mu-list4:before {
+&.mu-html51:before {
   content: "\e92b";
 }
-&.mu-earth:before {
+&.mu-git:before {
   content: "\e92c";
 }
-&.mu-spinner:before {
+&.mu-css31:before {
   content: "\e92d";
 }
-&.mu-search:before {
+&.mu-js:before {
   content: "\e92e";
 }
-&.mu-filter:before {
+&.mu-npm:before {
   content: "\e92f";
 }
-&.mu-cog:before {
+&.mu-github:before {
   content: "\e930";
 }
-&.mu-cogs:before {
+&.mu-linkedin:before {
   content: "\e931";
-}
-&.mu-gears:before {
-  content: "\e931";
-}
-&.mu-map:before {
-  content: "\e932";
-}
-&.mu-badge:before {
-  content: "\e933";
-}
-&.mu-folder:before {
-  content: "\e934";
-}
-&.mu-case:before {
-  content: "\e935";
-}
-&.mu-list:before {
-  content: "\e936";
-}
-&.mu-server:before {
-  content: "\e937";
-}
-&.mu-clock:before {
-  content: "\e938";
-}
-&.mu-location:before {
-  content: "\e939";
-}
-&.mu-cloud:before {
-  content: "\e93a";
-}
-&.mu-phone:before {
-  content: "\e93b";
-}
-&.mu-send:before {
-  content: "\e93c";
-}
-&.mu-browser:before {
-  content: "\e93d";
-}
-&.mu-calendar:before {
-  content: "\e93e";
-}
-&.mu-cc:before {
-  content: "\e93f";
-}
-&.mu-language:before {
-  content: "\e940";
-}
-&.mu-cap:before {
-  content: "\e941";
-}
-&.mu-bitcoin:before {
-  content: "\e942";
-}
-&.mu-apple:before {
-  content: "\e943";
-}
-&.mu-windows:before {
-  content: "\e944";
-}
-&.mu-tux:before {
-  content: "\e945";
 }
 &.mu-chrome:before {
-  content: "\e946";
+  content: "\e932";
 }
 &.mu-amazon:before {
+  content: "\e933";
+}
+&.mu-tux:before {
+  content: "\e934";
+}
+&.mu-windows:before {
+  content: "\e935";
+}
+&.mu-apple:before {
+  content: "\e936";
+}
+&.mu-cloud:before {
+  content: "\e937";
+}
+&.mu-star:before {
+  content: "\e938";
+}
+&.mu-half-star:before {
+  content: "\e939";
+}
+&.mu-heart:before {
+  content: "\e93a";
+}
+&.mu-group:before {
+  content: "\e93b";
+}
+&.mu-lightbulb:before {
+  content: "\e93c";
+}
+&.mu-location:before {
+  content: "\e93d";
+}
+&.mu-filter:before {
+  content: "\e93e";
+}
+&.mu-institute:before {
+  content: "\e93f";
+}
+&.mu-shield:before {
+  content: "\e940";
+}
+&.mu-map:before {
+  content: "\e941";
+}
+&.mu-cap:before {
+  content: "\e942";
+}
+&.mu-building:before {
+  content: "\e943";
+}
+&.mu-list:before {
+  content: "\e944";
+}
+&.mu-badge:before {
+  content: "\e945";
+}
+&.mu-case:before {
+  content: "\e946";
+}
+&.mu-folder:before {
   content: "\e947";
 }
-&.mu-linkedin:before {
+&.mu-calendar:before {
   content: "\e948";
 }
-&.mu-instagram:before {
+&.mu-browser:before {
   content: "\e949";
 }
-&.mu-github:before {
+&.mu-server:before {
   content: "\e94a";
 }
-&.mu-js:before {
+&.mu-grid:before {
   content: "\e94b";
 }
-&.mu-npm:before {
+&.mu-list-detail:before {
   content: "\e94c";
 }
-&.mu-tag:before {
+&.mu-list4:before {
   content: "\e94d";
 }
-&.mu-html51:before {
+&.mu-cc:before {
   content: "\e94e";
 }
-&.mu-css31:before {
+&.mu-clock:before {
   content: "\e94f";
 }
-&.mu-git:before {
+&.mu-earth:before {
   content: "\e950";
+}
+&.mu-spinner:before {
+  content: "\e951";
+}
+&.mu-cog:before {
+  content: "\e952";
+}
+&.mu-cogs:before {
+  content: "\e953";
+}
+&.mu-gears:before {
+  content: "\e953";
+}
+&.mu-search:before {
+  content: "\e954";
 }
 }
